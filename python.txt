@@ -1,0 +1,1203 @@
+1. AI / ML 
+2. Data Scientist
+3. Cyber Security
+4. Cloud Engineer
+5. DevOps Engineer
+6. Full-stack Developer
+7. Blockchain Developer
+
+
+Floor division
+===============
+
+Floor division is like normal division except the result is floored afterward, which means the result is rounded down to the nearest integer. 
+The // operator is used for floor division.
+
+7 // 3
+# 2 (an integer, rounded down from 2.333)
+-7 // 3
+# -3 (an integer, rounded down from -2.333)
+
+Exponents
+==========
+Python has built-in support for exponents - something most languages require a math library for.
+
+# reads as "three squared" or
+# "three raised to the second power"
+3 ** 2
+# 9
+
+Plus Equals
+============
+Python makes reassignment easy when doing math. In JavaScript or Go, you might be familiar with the ++ syntax for incrementing a number variable by 1. 
+In Python, we use the += in-place operator instead.
+
+star_rating = 4
+star_rating += 1
+# star_rating is now 5
+
+Other operators
+The other in-place operators work similarly:
+
+star_rating = 4
+star_rating -= 1
+# star_rating is now 3
+
+star_rating = 4
+star_rating *= 2
+# star_rating is now 8
+
+star_rating = 4
+star_rating /= 2
+# star_rating is now 2.0
+
+Scientific Notation
+====================
+As we covered earlier, a float is a positive or negative number with a fractional part.
+
+You can add the letter e or E followed by a positive or negative integer to specify that you're using scientific notation.
+
+print(16e3)
+# Prints 16000.0
+
+print(7.1e-2)
+# Prints 0.071
+
+If you're not familiar with scientific notation, it's a way of expressing numbers that are too large or too small to conveniently write normally.
+
+In a nutshell, the number following the e specifies how many places to move the decimal to the right for a positive number, or to the left for a negative number.
+
+Underscores for readability
+============================
+Python also allows you to represent large numbers in the decimal format using underscores as the delimiter instead of commas to make it easier to read.
+
+num = 16_000
+print(num)
+# Prints 16000
+
+num = 16_000_000
+print(num)
+# Prints 16000000
+
+
+Logical Operators
+=================
+You're probably familiar with the logical operators and and or.
+
+Logical operators deal with boolean values, True and False.
+
+The logical and operator requires that both inputs are True to return True. The logical or operator only requires that at least one input is True to return True.
+
+For example:
+============
+
+True and True == True
+True and False == False
+False and False == False
+
+True or True == True
+True or False == True
+False or False == False
+
+Python Syntax
+=============
+print(True and True)
+# prints True
+
+print(True or False)
+# prints True
+
+Nesting with parentheses
+=========================
+We can nest logical expressions using parentheses.
+
+print((True or False) and False)
+
+First, we evaluate the expression in the parentheses, (True or False). It evaluates to True:
+
+print(True and False)
+True and False evaluates to False:
+
+print(False)
+So, print((True or False) and False) prints "False" to the console.
+
+Not
+===
+We skipped a very important logical operator - not. The not operator reverses the result. It returns False if the input was True and vice-versa.
+
+print(not True)
+# Prints: False
+
+print(not False)
+# Prints: True
+
+
+Binary Numbers
+==============
+Binary numbers are just "base 2" numbers. They work the same way as "normal" base 10 numbers, but with two symbols instead of ten.
+
+Base-2 (binary) symbols: 0 and 1
+Base-10 (decimal) symbols: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+
+Binary in Python
+You can write an integer in Python using binary syntax using the 0b prefix:
+
+print(0b0001)
+# Prints 1
+
+print(0b0101)
+# Prints 5
+
+
+Bitwise "&" Operator
+=====================
+Bitwise operators are similar to logical operators, but instead of operating on boolean values, they apply the same logic to all the bits in a value by column. For example, say you had the numbers 5 and 7 represented in binary. You could perform a bitwise "and" operation and the result would be 5.
+
+0101 is 5
+0111 is 7
+
+0101
+&
+0111
+=
+0101
+
+A 1 in binary is the same as True, while 0 is False. So really a bitwise operation is just a bunch of logical operations that are completed in tandem by column.
+
+0 & 0 = 0
+
+1 & 1 = 1
+
+1 & 0 = 0
+Ampersand & is the bitwise "and" operator in Python. "And" is the name of the bitwise operation, while ampersand & is the symbol for that operation. For example, 5 & 7 = 5, while 5 & 2 = 0.
+
+0101 is 5
+0010 is 2
+0101
+&
+0010
+=
+0000
+Binary notation
+When writing a number in binary, the prefix 0b is used to indicate that what follows is a binary number. 0b10 is two in binary, but 10 without the 0b prefix is simply ten.
+
+0b0101 is 5
+0b0111 is 7
+Putting It Together
+0b0101 & 0b0111
+# equals 5
+
+binaryFive = 0b0101
+binarySeven = 0b0111
+binaryFive & binarySeven
+# equals 5
+
+Bitwise "|" Operator
+======================
+As you may have guessed, the bitwise "or" operator is similar to the bitwise "and" operator in that it works on binary rather than boolean values. However, the bitwise "or" operator "or"s the bits together. Here's an example:
+
+0101 is 5
+0111 is 7
+0101
+|
+0111
+=
+0111
+
+A 1 in binary is the same as True, while 0 is False. So a bitwise operation is just a bunch of logical operations that are completed in tandem. When two binary numbers are "or"ed together, the result has a 1 in any place where either of the input numbers has a 1 in that place.
+
+| is the bitwise "or" operator in Python. 5 | 7 = 7 and 5 | 2 = 7 as well!
+
+0101 is 5
+0010 is 2
+
+0101
+|
+0010
+=
+0111
+
+Converting Binary
+==================
+The built-in int function can convert a binary string to an integer. It takes a second argument that specifies the base of the number (binary is base 2). For example:
+
+# this is a binary string
+binary_string = "100"
+
+# convert binary string to integer
+num = int(binary_string, 2)
+
+
+Comparison Operators
+=====================
+When coding it's necessary to be able to compare two values. Boolean logic is the name for these kinds of comparison operations that always result in True or False.
+
+The operators:
+
+< "less than"
+> "greater than"
+<= "less than or equal to"
+>= "greater than or equal to"
+== "equal to"
+!= "not equal to"
+For example:
+
+5 < 6 # evaluates to True
+5 > 6 # evaluates to False
+5 >= 6 # evaluates to False
+5 <= 6 # evaluates to True
+5 == 6 # evaluates to False
+5 != 6 # evaluates to True
+
+If Statements
+==============
+It's often useful to only execute code if a certain condition is met:
+
+if CONDITION:
+	# do some stuff here
+
+# code after the if block will run regardless
+For example, in this code:
+
+if bob_score > bill_score:
+	print("Bob Wins!")
+
+print("Game Complete")
+if bob_score is greater than bill_score, then this will be printed:
+
+Bob Wins!
+Game Complete
+Otherwise, this will be printed:
+
+Game Complete
+
+
+If-Else
+========
+An if statement can be followed by zero or more elif (which stands for "else if") statements, which can be followed by zero or one else statements.
+
+For example:
+============
+
+if score > high_score:
+    print("High score beat!")
+elif score > second_highest_score:
+    print("You got second place!")
+elif score > third_highest_score:
+    print("You got third place!")
+else:
+    print("Better luck next time")
+
+First the if statement is evaluated. If it is True then the if statement's body is executed and all the other elses are ignored.
+
+If the first if is false then the next elif is evaluated. Likewise, if it is True then its body is executed and the rest are ignored.
+
+If none of the if statements evaluate to True then the final else statement will be the only body executed.
+
+Boolean Logic
+=============
+Boolean logic refers to logic dealing with boolean (True or False) values. For example,
+
+Dogs must have four legs and weigh less than 100 kilograms. (Both conditions must be true)
+
+Cars are cool if they go faster than 200 MPH, or if they are electric. (At least one condition must be true)
+
+Logical operators review
+========================
+As we discussed earlier, the logical operators and and or can be used to perform boolean logic.
+
+And review
+The and operator returns True if both of the conditions on either side evaluates to True:
+
+def is_dog(num_legs, weight):
+    return num_legs == 4 and weight < 100
+
+Let's go over how this function evaluates the parameters num_legs=4 and weight=99:
+
+return 4 == 4 and 99 < 100
+return True and True
+
+return True
+
+Let's see what would happen with 3 and 98 instead:
+
+return 3 == 4 and 98 < 100
+
+return False and True
+
+return False
+
+Or review
+==========
+The or operator returns True if at least one of the conditions on either side evaluates to True:
+
+def is_car_cool(speed, is_electric):
+    return speed > 200 or is_electric
+
+Let's use a non-electric car that can do 250:
+
+return 250 > 200 or False
+
+return True or False
+
+return True
+
+Loops
+======
+Loops are a programmer's best friend. Loops allow us to do the same operation multiple times without having to write it explicitly each time.
+
+For example, let's pretend I want to print the numbers 0-9.
+
+I could do this:
+
+print(0)
+print(1)
+print(2)
+print(3)
+print(4)
+print(5)
+print(6)
+print(7)
+print(8)
+print(9)
+
+Even so, it would save me a lot of time typing to use a loop. Especially if I wanted to do the same thing one thousand or one million times.
+
+A "for loop" in Python is written like this:
+
+for i in range(0, 10):
+    print(i)
+
+i replaces the numbers 0 to 9. In English, the code says:
+
+Start with i equals 0. (i in range(0))
+If i is not less than 10 (range(0, 10)), exit the loop. Else:
+Print i to the console. (print(i))
+Add 1 to i. (range defaults to incrementing by 1)
+Go back to step 2.
+The result is that the numbers 0-9 are logged to the console in order.
+
+Whitespace matters in Python!
+The body of a for-loop must be indented, otherwise you'll get a syntax error.
+
+Range Continued
+===============
+The range() function we've been using in our for loops actually has an optional 3rd parameter: the "step".
+
+for i in range(0, 10, 2):
+    print(i)
+# prints:
+# 0
+# 2
+# 4
+# 6
+# 8
+
+The "step" parameter determines how much to add to i in each iteration of the loop. You can even go backwards:
+
+for i in range(3, 0, -1):
+    print(i)
+# prints:
+# 3
+# 2
+# 1
+
+While
+=====
+Python has another type of loop, the while loop. It's a loop that continues while a condition remains True. The syntax is simple:
+
+while 1:
+    print("1 evaluates to True")
+
+# prints:
+# 1 evaluates to True
+# 1 evaluates to True
+# (...continuing)
+
+The example above is hardcoded to continue forever, creating an infinite loop. Typically, a while loop condition is a comparison or variable, and it determines when the loop ends:
+
+num = 0
+while num < 3:
+    num += 1
+    print(num)
+
+# prints:
+# 1
+# 2
+# 3
+# (the loop stops when num >= 3)
+
+What is a prime number?
+=======================
+A prime number is a positive integer, greater than 1, that is only divisible by itself and 1. For example, 2, 3, 5, and 7 are all prime numbers, but 1, 4, 6, 8, and 9 are not. 0 and 1 are not prime numbers! And don't forget to catch all negative numbers!
+
+Modulo
+=======
+We'll talk more about it next chapter, but you can use the modulo operator % to find a remainder. For example, 7 modulo 2 would be 1, because 2 can be multiplied evenly into 7 at most 3 times.
+
+remainder = 8 % 3
+# remainder = 2
+
+remainder = 9 % 3
+# remainder = 0
+
+Lists
+======
+A natural way to organize and store data is in a List. Some languages call them "arrays", but in Python we just call them lists. Think of all the apps you use and how many of the items in the app are organized into lists.
+
+For example:
+============
+
+An X (formerly Twitter) feed is a list of posts
+An online store is a list of products
+The state of a chess game is a list of moves
+This list is a list of things that are lists
+Lists in Python are declared using square brackets, with commas separating each item:
+
+inventory = ["Iron Breastplate", "Healing Potion", "Leather Scraps"]
+
+Lists can contain items of any data type, in our example above we have a List of strings.
+
+
+Counting in Programming
+========================
+In the world of programming, counting is a bit strange!
+
+We don't start counting at 1, we start at 0 instead.
+
+Indexes
+========
+Each item in a list has an index that refers to its spot in the list.
+
+Take the following list as an example:
+
+names = ["Bob", "Lane", "Alice", "Breanna"]
+
+Index 0: Bob
+Index 1: Lane
+Index 2: Alice
+Index 3: Breanna
+
+
+Indexing into Lists
+===================
+Now that we know how to create new lists, we need to know how to access specific items in the list.
+
+We access items in a list directly by using their index. Indexes start at 0 (the first item) and increment by one with each successive item. The syntax is as follows:
+
+best_languages = ["JavaScript", "Go", "Rust", "Python", "C"]
+print(best_languages[1])
+# prints "Go", because index 1 was provided
+
+List length
+===========
+The length of a List can be calculated using the len() function.
+
+fruits = ["apple", "banana", "pear"]
+length = len(fruits)
+# 3
+
+The length of the list is equal to the number of items present. Don't be fooled by the fact that the length is not equal to the index of the last element, 
+in fact, it will always be one greater.
+
+Appending in Python
+===================
+It's common to create an empty list then fill it with values using a loop. We can add values to the end of a list using the .append() method:
+
+cards = []
+cards.append("nvidia")
+cards.append("amd")
+# the cards list is now ['nvidia', 'amd']
+
+Pop Values
+==========
+.pop() is the opposite of .append(). Pop removes the last element from a list and returns it for use. For example:
+
+vegetables = ["broccoli", "cabbage", "kale", "tomato"]
+last_vegetable = vegetables.pop()
+# vegetables = ['broccoli', 'cabbage', 'kale']
+# last_vegetable = 'tomato'
+
+Note
+====
+While .pop() typically removes the last item of a list, it can also be used to remove an item at a specific index. 
+For example, vegetables.pop(1) would remove 'cabbage' from the list. This can be useful when you need to remove items from other positions in your list.
+
+Counting the items in a list
+Remember that we can iterate over all the elements in a list using a loop. For example, the following code will print each item in the sports list.
+
+for i in range(0, len(sports)):
+    print(sports[i])
+
+
+
+No-index Syntax
+================
+In my opinion, Python has the most elegant syntax for iterating directly over the items in a list without worrying about index numbers. 
+If you don't need the index number you can use the following syntax:
+
+trees = ['oak', 'pine', 'maple']
+for tree in trees:
+    print(tree)
+# Prints:
+# oak
+# pine
+# maple
+
+tree, the variable declared using the in keyword, directly accesses the value in the list rather than the index of the value. 
+If we don't need to update the item and only need to access its value then this is a more clean way to write the code.
+
+
+Find Max
+=========
+Infinity
+The built-in float() function can create a numeric floating point value of negative infinity. Because every value will be greater than negative infinity, we can use it to help us accomplish our goal of finding the max value.
+
+negative_infinity = float("-inf")
+positive_infinity = float("inf")
+
+
+Modulo operator in Python
+=========================
+The modulo operator can be used to find a remainder:
+For example, 7 modulo 2 would be 1, because 2 can be multiplied evenly into 7 at most 3 times:
+
+2 * 3 = 6
+
+Then there is 1 remaining to get from 6 to 7.
+
+7 - 6 = 1
+
+The modulo operator is the percent sign: %. It's important to recognize modulo is not a percentage though! That's just the symbol we're using.
+
+remainder = 8 % 3
+# remainder = 2
+
+An odd number is a number that when divided by 2, the remainder is not 0.
+
+Slicing lists
+==============
+Python makes it easy to slice and dice lists to work only with the section you care about. One way to do this is to use the simple slicing operator, which is just a colon :.
+
+With this operator, you can specify where to start and end the slice, and how to step through the original list. List slicing returns a new list from the existing list.
+
+The syntax is as follows:
+=========================
+
+my_list[ start : stop : step ]
+
+For example:
+
+scores = [50, 70, 30, 20, 90, 10, 50]
+# Display list
+print(scores[1:5:2])
+# Prints [70, 20]
+
+The above reads as "give me a slice of the scores list from index 1, up to but not including 5, skipping every 2nd value. All of the sections are optional.
+
+Omitting sections
+You can also omit various sections ("start", "stop", or "step"). For example, numbers[:3] means "get all items from the start up to (but not including) index 3". numbers[3:] means "get all items from index 3 to the end".
+
+numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+numbers[:3] # Gives [0, 1, 2]
+numbers[3:] # Gives [3, 4, 5, 6, 7, 8, 9]
+
+Using only the "step" section
+numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+numbers[::2] # Gives [0, 2, 4, 6, 8]
+
+Negative Indices
+Negative indices count from the end of the list. For example, numbers[-1] gives the last item in the list, numbers[-2] gives the second last item, and so on.
+
+numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+numbers[-3:] # Gives [7, 8, 9]
+
+List Operations - Concatenate
+===============================
+Concatenating two lists (smushing them together) is easy in Python, just use the + operator.
+
+total = [1, 2, 3] + [4, 5, 6]
+print(total)
+# Prints: [1, 2, 3, 4, 5, 6]
+
+List Operations - Contains
+===========================
+Checking whether a value exists in a list is also really easy in Python, just use the in keyword.
+
+fruits = ["apple", "orange", "banana"]
+print("banana" in fruits)
+# Prints: True
+
+List deletion
+==============
+Python has a built-in keyword del that deletes items from objects. In the case of a list, you can delete specific indexes or entire slices.
+
+nums = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# delete the fourth item
+del nums[3]
+print(nums)
+# Output: [1, 2, 3, 5, 6, 7, 8, 9]
+
+# delete the second item up to (but not including) the fourth item
+nums = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+del nums[1:3]
+print(nums)
+# Output: [1, 4, 5, 6, 7, 8, 9]
+
+# delete all elements
+nums = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+del nums[:]
+print(nums)
+# Output: []
+
+
+Tuples
+Tuples are collections of data that are ordered and unchangeable. You can think of a tuple as a List with a fixed size. Tuples are created with round brackets:
+
+my_tuple = ("this is a tuple", 45, True)
+print(my_tuple[0])
+# this is a tuple
+print(my_tuple[1])
+# 45
+print(my_tuple[2])
+# True
+
+While it's typically considered bad practice to store items of different types in a List, it's not a problem with Tuples. Because they have a fixed size, it's easy to keep track of which indexes store which types of data.
+
+Tuples are often used to store very small groups (like 2 or 3 items) of data. For example, you might use a tuple to store a dog's name and age.
+
+dog = ("Fido", 4)
+
+Note: There is a special case for creating single-item tuples. You must include a comma so Python knows it's a tuple and not regular parentheses.
+
+dog = ("Fido",)
+
+Because Tuples hold their data, multiple tuples can be stored within a list. Similar to storing other data in lists, each tuple within the list is separated by a comma. When accessing a list of tuples, the first index selects which tuple you want to access, the second selects a value within that tuple.
+
+my_tuples = [("this is the first tuple in the list", 45, True),("this is the second tuple in the list", 21, False)]
+print(my_tuples[0][0]) # this is the first tuple in the list
+print(my_tuples[0][1]) # 45
+print(my_tuples[1][0]) # this is the second tuple in the list
+print(my_tuples[1][2]) # False
+
+Tuple Unpacking
+You can easily assign the values of a tuple to variables using unpacking.
+
+dog = ("Fido", 4)
+dog_name, dog_age = dog
+print(dog_name)
+# Fido
+print(dog_age)
+# 4
+
+When you return multiple values from a function, you're actually returning a tuple.
+
+
+Dictionaries
+============
+Dictionaries in Python are used to store data values in key -> value pairs. Dictionaries are a great way to store groups of information.
+
+# use curly braces
+# add key-value pairs
+car = {
+  "brand": "Tesla",
+  "model": "3",
+  "year": 2019
+}
+
+Here the car variable is assigned to a dictionary {} containing the keys brand, model and year. The keys' corresponding values are Tesla, 3 and 2019.
+
+
+Accessing Dictionary Values
+===========================
+Dictionary elements must be accessible somehow in code, otherwise they wouldn't be very useful.
+
+A value is retrieved from a dictionary by specifying its corresponding key in square brackets. The square brackets look similar to indexing into a list.
+
+car = {
+    "make": "tesla",
+    "model": "3"
+}
+print(car["make"])
+# Prints: tesla
+
+Setting Dictionary Values
+=========================
+You don't need to create a dictionary with values already inside. It is common to create a blank dictionary then populate it later using dynamic values. The syntax is the same as getting data out of a key, just use the assignment operator (=) to give that key a value.
+
+planets = {}
+planets["Earth"] = True
+planets["Pluto"] = False
+print(planets["Pluto"])
+# Prints False
+
+Deleting Dictionary Values
+You can delete existing keys using the del keyword.
+
+names_dict = {
+    "jack": "bronson",
+    "jill": "mcarty",
+    "joe": "denver"
+}
+
+del names_dict["joe"]
+
+print(names_dict)
+# Prints: {'jack': 'bronson', 'jill': 'mcarty'}
+
+Deleting keys that don't exist
+Notice that if you try to delete a key that doesn't exist, you'll get an error.
+
+names_dict = {
+    "jack": "bronson",
+    "jill": "mcarty",
+    "joe": "denver"
+}
+
+del names_dict["unknown"]
+# ERROR HERE, key doesn't exist
+
+Counting Practice
+Checking for existence
+If you're unsure whether or not a key exists in a dictionary, use the in keyword.
+
+cars = {
+    "ford": "f150",
+    "tesla": "3"
+}
+
+print("ford" in cars)
+# Prints: True
+
+print("gmc" in cars)
+# Prints: False
+
+Iterating over a dictionary in Python
+We can iterate over a dictionary's keys using the same no-index syntax we used to iterate over the values in a list. With access to the dictionary's keys, we also have access to their corresponding values.
+
+fruit_sizes = {
+    "apple": "small",
+    "banana": "large",
+    "grape": "tiny"
+}
+
+for name in fruit_sizes:
+    size = fruit_sizes[name]
+    print(f"name: {name}, size: {size}")
+
+# name: apple, size: small
+# name: banana, size: large
+# name: grape, size: tiny
+
+
+Sets
+=====
+Sets are like Lists, but they are unordered and they guarantee uniqueness. Only ONE of each value can be in a set.
+
+fruits = {'apple', 'banana', 'grape'}
+print(type(fruits))
+# Prints: <class 'set'>
+
+print(fruits)
+# Prints: {'banana', 'grape', 'apple'}
+
+Add values
+==========
+fruits = {'apple', 'banana', 'grape'}
+fruits.add('pear')
+print(fruits)
+# Prints: {'banana', 'grape', 'pear', 'apple'}
+
+Note: No error will be raised if you add an item already in the set.
+
+Empty set
+==========
+Because the empty bracket {} syntax creates an empty dictionary, to create an empty set, you need to use the set() function.
+
+fruits = set()
+fruits.add('pear')
+print(fruits)
+# Prints: {'pear'}
+
+Iterate over values in a set (order is not guaranteed)
+fruits = {'apple', 'banana', 'grape'}
+for fruit in fruits:
+    print(fruit)
+    # Prints:
+    # banana
+    # grape
+    # apple
+
+Removing values
+===============
+fruits = {'apple', 'banana', 'grape'}
+fruits.remove('apple')
+print(fruits)
+# Prints: {'banana', 'grape'}
+
+
+Exceptions
+Even if your code has the right syntax, however, it may still cause an error when an attempt is made to execute it. Errors detected during execution are called "exceptions" 
+and can be handled gracefully by your code. You can even raise your own exceptions when bad things happen in your code.
+
+Python uses a try-except pattern for handling errors.
+
+try:
+  10 / 0
+except Exception:
+  print("can't divide by zero")
+
+The try block is executed until an exception is raised or it completes, whichever happens first. In this case, an exception is raised because division by zero is impossible. 
+The except block is only executed if an exception is raised in the try block.
+
+If we want to access the data from the exception, we use the following syntax:
+
+try:
+  10 / 0
+except Exception as e:
+  print(e)
+
+# prints "division by zero"
+Wrapping potential errors in try/except blocks allows the program to handle the exception gracefully without crashing.
+
+Don't catch your own exceptions
+===============================
+As a rule of thumb, you do not want to catch exceptions you raise within the same function block, for example:
+
+# don't do this
+def craft_sword(metal_bar):
+    try:
+        if metal_bar == "bronze":
+            return "bronze sword"
+        if metal_bar == "iron":
+            return "iron sword"
+        if metal_bar == "steel":
+            return "steel sword"
+        raise Exception("invalid metal bar")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+Instead, the caller should handle any potential error by wrapping the function call within a try/except block.
+
+# do this
+try:
+    craft_sword("gold bar")
+except Exception as e:
+    print(e)
+
+raise Exception("something bad happened")
+
+
+Different types of exceptions
+We haven't covered classes and objects yet, which is what an Exception really is at its core. We'll go more into that in the course on object-oriented programming.
+
+For now, what is important to understand is that there are different types of exceptions and we can handle them differently depending on the situation. 
+Some exceptions are more specific, like ZeroDivisionError or IndexError, and some are more general, like the base Exception.
+
+Syntax
+try:
+    10/0
+except ZeroDivisionError:
+    print("0 division")
+except Exception as e:
+    print(e)
+
+try:
+    nums = [0, 1]
+    print(nums[2])
+except IndexError:
+    print("index error")
+except Exception as e:
+    print(e)
+
+
+Which will print:
+
+0 division
+index error
+
+Why specific exceptions come first
+When handling exceptions, it’s important to catch the most specific ones first, because Python stops checking once it finds a matching exception handler. 
+If you catch a more general Exception first, any specific errors will never get handled individually.
+
+For example:
+
+try:
+    nums = [0, 1]
+    print(nums[2])
+except Exception:
+    print("An error occurred")
+except IndexError:
+    print("Index error")
+
+In this case, the general Exception will catch the error before the IndexError can be reached, and the message “Index error” will never be printed. 
+Always handle the most specific exception first!
+
+Alias exception messages
+As seen in the example, you can also access the error using as, like this:
+
+except Exception as e:
+    print(e)
+
+The default behaviour of print is that it will print the string representation of whatever object is passed to it. In this case, it will print the error message.
+
+List Division
+Write a function called divide_list() that takes a list and a number as input. The function returns a new list that contains all the elements of the original list 
+except they have been divided by the second input.
+
+divided_list = divide_list([6, 8, 10], 2)
+print(divided_list) # [3.0, 4.0, 5.0]
+
+
+The Zen of Python
+Tim Peters, a long time Pythonista, describes the guiding principles of Python in his famous short piece, The Zen of Python.
+
+Beautiful is better than ugly.
+
+Explicit is better than implicit.
+
+Simple is better than complex.
+
+Complex is better than complicated.
+
+Flat is better than nested.
+
+Sparse is better than dense.
+
+Readability counts.
+
+Special cases aren't special enough to break the rules.
+
+Although practicality beats purity.
+
+Errors should never pass silently.
+
+Unless explicitly silenced.
+
+In the face of ambiguity, refuse the temptation to guess.
+
+There should be one-- and preferably only one --obvious way to do it.
+
+Although that way may not be obvious at first unless you're Dutch.
+
+Now is better than never.
+
+Although never is often better than right now.
+
+If the implementation is hard to explain, it's a bad idea.
+
+If the implementation is easy to explain, it may be a good idea.
+
+Namespaces are one honking great idea -- let's do more of those!
+
+
+LIST COMPREHENSIONS
+===================
+
+new_list = [new_item for item in list]
+
+new_item ==> the item with the calculation on it
+item ==> item (Can be anything)
+list ==> the list.
+
+e.g 
+number = [1, 2, 3, 4, 5, 6, 7, 8]
+
+double_number = [num * 2 for item in number]
+print(double_number)
+
+new_list = [new_item for item in list if condition]
+import pandas as pd
+
+df = pd.read_csv("file_location")
+year_code_list = list(df[YearsCode"].dropna())
+
+year_code_list_cleaned = [int(year) for year in year_code_list if year != "More than 50 years"]
+print(year_code_list_cleaned)
+
+junior_developer_count = len([year for year in year_code_list_cleaned if year < 5 ])
+
+
+pip install pandas
+===================
+
+
+my_list = [10, 20, 30, 20, 50]
+
+# Get all indices of the value 20
+indices = [i for i, x in enumerate(my_list) if x == 20]
+print(indices)  # Output: [1, 3]
+
+The enumerate() function in Python is used to iterate over an iterable (like a list, tuple, or string) while keeping track of both the index and the value of each item in the iterable.
+How enumerate() Works
+======================
+It adds a counter (starting from 0 by default) to the iterable.
+It returns an enumerate object, which is an iterator that produces tuples of the form (index, value) for each item in the iterable.
+enumerate(iterable, start=0)
+iterable: Any iterable object, like a list, tuple, string, or range.
+start: An optional parameter to specify the starting index. Default is 0.
+
+my_list = ['a', 'b', 'c']
+
+for index, value in enumerate(my_list):
+    print(index, value)
+
+0 a
+1 b
+2 c
+
+GENERATORS
+===========
+A function that uses yield instaed of return is known as generators.
+
+import itertools
+import string
+import sys
+ 
+def letters():
+    for c in string.ascii_lowercase:
+        yield c
+
+
+for letter in letters():
+    print(letter)
+
+
+def prime_number():
+    # handle the first prime
+    yiekd 2
+    prime_cache = [2] # cache of prime numbers
+
+    # loop over positive, old integers
+    for n in intertools.count(3, 2):
+        is_prime = True
+
+        # check if any prime is number divides n
+        for p in prime_cache:
+            if n % p == 0: # p divides n evenly
+                is_prime = False
+                break
+        
+        # is it a prime?
+        if is_prime:
+            prime_cache.append(n)
+            yied n
+
+for p in prime_number():
+    print(p)
+    if p > 100:
+        break
+
+
+GENERATOR EXPRESSIONS
+======================
+List Comprehension: [ expression ]
+Generator Expression: ( expression )
+
+sqaures = (x**2 for x in intertools.count(1))
+
+for x in sqaures:
+    print(x)
+
+    if x > 500:
+        sqaures .close()
+
+print(sys.getsizeof(sqaures))
+
+
+ASYNCHRONOUS AND SYNCHRONOUS
+=============================
+In synchronous mode task are performed one at a time in the order they are called. while in asynchronous mode different tasks can 
+start process and finish in overlaping period of time
+
+Subroutine and Coreroutine
+A Subroutine is a block of code that can be called as needed. 
+And when a Subroutine is called the control of the program is passed to the Subroutine and when the work is done the control is returned back to the main program,
+and execution is resumed from where it is paused. Subroutinecan not be paused, they run until done.
+
+A Coreroutine is a kind of function that can have its excution paused and resumed. This is possible because the maintain their state between pauses.
+coreroutines are perfect for task that need to wait for something like
+I/O Operations
+Database Query
+HTTP Requests
+
+
+DUNDER/MAGIC Method in Python
+=============================
+
+
+
+
+
+Virtual Environment
+====================
+A Virtual Environment is like a seperate isolated workspace on your computer/machine where you can install packages and run python projects
+
+To setup a VE we use the following command and module
+
+python3 -m venv [name of the env] e.g
+
+python3 -m venv venv
+
+Activate for windows ===> venv\Scripts\activate
+Activate for MAC =====> source venv/bin/activate
+To Deactivate ====> deactivate
+
+Installing packages we use ===>  pip install qrcode
+ pip install Pillow
+
+
+source venv/bin/activate   # On Linux/Mac
+venv\Scripts\activate      # On Windows
+
+
+from PIL import Image
+
+# Create a blank white image
+img = Image.new('RGB', (100, 100), color='white')
+img.show()
+
+pip check
+pip show Pillow
+pip show qrcode
+
+
+
+CREATING FOLDERS AND FILE 
+==========================
+To create a new folder/directory
+mkdir foldername
+
+To view the contents of your folder
+cd foldername -- to get inside the folder
+then
+ls or dir -- to view contents of the folder
+
+To create a new file 
+touch example.txt -- filename and extension eg .js .html .txt 
+
+
+def pounds_to_kg(pounds):
+    kg = pounds * 0.453592
+    return kg
+
+
+SOLOID PRINCIPLES
+=================
+
+In this article, we’ve gone through all of the SOLID principles:
+
+S: Single responsibility principle
+O: Open-closed principle
+L: Liskov substitution principle
+I: Interface segregation principle
+D: Dependency inversion principle
+
+Python is Function Scope rather than Block Scoped as it is seen in JavaScript and other programming languages.
+
+
+CLASS
+=====
+Class is a blueprint for creating new objects
+Object is an instance of a class
