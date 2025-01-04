@@ -1201,3 +1201,31 @@ CLASS
 =====
 Class is a blueprint for creating new objects
 Object is an instance of a class
+
+
+WRITING SHELL SCRIPT
+=====================
+
+Execute this command on your terminal ====> "nano yt.sh" without quote where yt.sh would be the name of the file.
+NB: The name of the file must end with .sh extention.
+
+Once the file opens you add the following to the file
+#!/bin/zsh
+
+then you would add the comman to change directory into the dworking directory of your script. 
+Get the working director using "pwd" without the quote.
+
+cd /Users/nwabuezenwaiwu/Desktop/PYTHON_PROJECT/automation/youtube_downloader ==> User current working directory. 
+
+Then add comman to run the script
+
+python {name of the python file} $1 
+e.g python download.py $1
+
+$1 ===> This is a way to tell the script that you will be getting argument from the terminal.
+This means one terminal argument.
+
+And lastly to execute this on the terminal after saving. you use the following
+zsh {name of the shell file} and if it requires a terminal argument you also provide that.
+
+e.g zsh yt.sh "https://www.youtube.com/watch?v=vEQ8CXFWLZU&t=91s"
