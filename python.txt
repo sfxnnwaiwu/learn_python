@@ -1229,3 +1229,77 @@ And lastly to execute this on the terminal after saving. you use the following
 zsh {name of the shell file} and if it requires a terminal argument you also provide that.
 
 e.g zsh yt.sh "https://www.youtube.com/watch?v=vEQ8CXFWLZU&t=91s"
+
+USING PIPENV
+============
+pip install pipenv ===> To Install the packages
+
+pipenv --venv  ====> would show where the venv was installed
+
+pipenv install [package name]
+e.g pipenv install requests
+
+pipenv shell ====> This command will activate the venv created
+
+exist ===> This command will deactivate the current venv
+
+pipenv install ===> This command would install all dependecies needed by the application
+
+pipenv install --ignore-pipfile ===> This command would make pipenv ignore what is in the pipfile and use pipfile.lock
+
+pipenv graph ====> This command list all the installed packages
+
+pipenv uninstall [package name] ===> this will remove the package from your project
+
+pipenv install [package name]==2.9.* ===> This command would install the latest patches update released
+pipenv install [package name]==2.*  =====> This would install the latest minor update releaseed.
+
+pipenv update --outdated ===> This command will list packages that are outdated
+
+pipenv update [package name] =====> This command would update the package specified in thr command
+
+pipenv run
+
+
+HOW TO PUBLISH A PACKAGE TO PYPI.COM
+=====================================
+You would need to install three packages that would help in this process
+1) setuptools
+2) wheel
+3) twine
+
+As best practice we should create a high level directory with the same name as our package.
+e.g 
+readbook/ # Project folder
+        readbook/ # Package folder
+                __init__.py
+                book.py # module
+
+In the root directory you add the follwing files
+setup.py
+LICENSE
+README.md
+
+In setup file we do the following
+import setuptools
+
+setuptools.setup(
+    name="",
+    version=""
+    long_description=Path(README.md).read_text(),
+    packages=setuptools.find_packages(exclude=["any package you want to exclude"])
+)
+
+After you are done with the code you need to generate the package. Do the following on the terminal
+
+python setup.py sdist bdist_wheel
+
+Then finally use twine to upload to pypi.com from the terminal
+twine upload dist/*  ===> This command would upload the dist folder to pypi.com
+
+
+
+
+
+
+

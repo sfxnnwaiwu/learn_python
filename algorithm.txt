@@ -1,0 +1,5 @@
+WHAT IS BIG O NOTATION
+=======================
+This is a mathematical notation that describes the limiting behaviour of a function when the arquments tends to a particular value or infinite
+
+Time complexity is the amount of computer time it takes to run an algorithm.
