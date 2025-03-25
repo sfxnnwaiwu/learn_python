@@ -12,7 +12,7 @@ import subprocess
 # subprocess.run(['python', '-m', 'http.server', '8000'], capture_output = True, text = True)
 # subprocess.run(['python', 'other.py'], capture_output = True, text = True)
 
-completed = subprocess.run(['ls', '-l'], capture_output = True, text = True)
+completed = subprocess.run(['ls', '-l'], capture_output=True, text=True)
 # print(completed.stdout.decode())
 # print(completed.stderr.decode())
 print(completed.args)
